@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+}
+
+.border {
+    border-bottom: 1px solid black;
+    padding-bottom: 6px;
+}
+
+.wrapperImg {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.wrapperInfo {
+    display: inline-block;
+    width: 60%;
+    padding-left: 40px;
+}
+
+.button {
+    margin-left: 20px
+}

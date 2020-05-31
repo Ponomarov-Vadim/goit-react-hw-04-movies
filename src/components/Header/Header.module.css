@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+}
+
+.navList {
+    display: flex;
+    width: 110px;
+    justify-content: space-between;
+    list-style: none;
+
+}
+
+.link {
+    font-size: 18px;
+}
+
+.activeLink {
+    font-weight: bold;
+    color: red;
+}
+
+.wrapper {
+    padding: 20px;
+    border-bottom: 1px solid gray;
+    box-shadow: 0 4px 2px -2px gray;
+    margin-bottom: 10px;
+}

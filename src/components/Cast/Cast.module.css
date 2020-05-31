@@ -1,0 +1,11 @@
+.actorCard {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.actorList {
+
+    display: flex;
+    flex-wrap: wrap;
+}
