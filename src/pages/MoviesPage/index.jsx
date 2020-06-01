@@ -10,7 +10,6 @@ export default class MoviesPage extends Component {
 
   componentDidMount() {
     const { state } = this.props.location;
-    // console.log(state); // what wrong?
 
     if (state) {
       fetch("search/movie", state.query).then(({ data }) =>
@@ -36,6 +35,7 @@ export default class MoviesPage extends Component {
 
   render() {
     const { query, movies } = this.state;
+    const { location } = this.props;
 
     return (
       <>
@@ -48,7 +48,7 @@ export default class MoviesPage extends Component {
           />
           <button type="submit">Search</button>
         </form>
-        <MoviesList movies={movies} />
+        <MoviesList movies={movies} location={location} />
       </>
     );
   }

@@ -9,10 +9,18 @@ import styled from "./MovieDetailsPage.module.css";
 export default class MovieDetailsPage extends Component {
   state = {
     movieInfo: null,
+    prevLocation: "",
   };
 
   componentDidMount() {
-    fetch(`movie/${this.props.match.params.movieId}`).then((response) =>
+    const {
+      match: { params },
+      location: { state },
+    } = this.props;
+    if (state) {
+      this.setState({ prevLocation: state.from });
+    }
+    fetch(`movie/${params.movieId}`).then((response) =>
       this.setState({ movieInfo: response.data })
     );
   }
@@ -23,12 +31,9 @@ export default class MovieDetailsPage extends Component {
     const { history } = this.props;
 
     if (history.length > 2) {
-      history.goBack();
-      // console.log(); history is broken
-
-      return;
+      return history.push(this.state.prevLocation);
     }
-    history.push("/", this.state);
+    history.push("/");
   };
 
   render() {

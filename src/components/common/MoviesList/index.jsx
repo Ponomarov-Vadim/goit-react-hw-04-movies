@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const MoviesList = ({ movies }) => (
+const MoviesList = ({ movies, location }) => (
   <ul>
     {movies.map(({ id, name, title }) => (
       <li key={id}>
-        <Link to={`/movies/${id}`}>{name !== undefined ? name : title}</Link>
+        <Link to={{ pathname: `/movies/${id}`, state: { from: location } }}>
+          {name !== undefined ? name : title}
+        </Link>
       </li>
     ))}
   </ul>

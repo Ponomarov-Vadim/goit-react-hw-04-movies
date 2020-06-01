@@ -13,11 +13,11 @@ export default class HomePage extends Component {
 
   render() {
     const { movies } = this.state;
-
+    const { location } = this.props;
     return (
       <>
         <h2>Trending today</h2>
-        <MoviesList movies={movies} />
+        <MoviesList movies={movies} location={location} />
       </>
     );
   }
