@@ -10,7 +10,7 @@ export default class MoviesPage extends Component {
 
   componentDidMount() {
     const { state } = this.props.location;
-    console.log(state); // what wrong?
+    // console.log(state); // what wrong?
 
     if (state) {
       fetch("search/movie", state.query).then(({ data }) =>
